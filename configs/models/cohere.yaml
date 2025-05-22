@@ -1,9 +1,10 @@
-# configs/models/cohere.yaml - FIXED STRUCTURE (rename from others.yaml)
+# configs/models/cohere.yaml - CORRECTED MODEL NAMES AND v2 ENDPOINTS
 models:
   command-a-03-2025:
     display_name: "Cohere Command A"
-    version: "command-a-03-2025"
+    version: "command-a-03-2025"  # This is the actual model ID for API calls
     api_key_env: "COHERE_API_KEY"
+    api_url: "https://api.cohere.com/v2/chat"
     max_tokens: 128000
     context_window: 128000
     strengths:
@@ -21,9 +22,10 @@ models:
     provider: "cohere"
 
   command-r-plus-08-2024:
-    display_name: "Cohere Command R+ 003"
-    version: "command-r-plus-08-2024"
+    display_name: "Cohere Command R+ 08-2024"
+    version: "command-r-plus-08-2024"  # This is the actual model ID for API calls
     api_key_env: "COHERE_API_KEY"
+    api_url: "https://api.cohere.com/v2/chat"
     max_tokens: 128000
     context_window: 128000
     strengths:
@@ -41,9 +43,10 @@ models:
     provider: "cohere"
 
   command-r-plus-04-2024:
-    display_name: "Cohere Command R+ 002"
-    version: "command-r-plus-04-2024"
+    display_name: "Cohere Command R+ 04-2024"
+    version: "command-r-plus-04-2024"  # This is the actual model ID for API calls
     api_key_env: "COHERE_API_KEY"
+    api_url: "https://api.cohere.com/v2/chat"
     max_tokens: 128000
     context_window: 128000
     strengths:
@@ -61,9 +64,10 @@ models:
     provider: "cohere"
 
   command-r-plus:
-    display_name: "Cohere Command R+ 001"
-    version: "command-r-plus"
+    display_name: "Cohere Command R+"
+    version: "command-r-plus"  # This is the actual model ID for API calls
     api_key_env: "COHERE_API_KEY"
+    api_url: "https://api.cohere.com/v2/chat"
     max_tokens: 128000
     context_window: 128000
     strengths:
@@ -81,9 +85,10 @@ models:
     provider: "cohere"
 
   command-r-08-2024-v004:
-    display_name: "Cohere Command R 004"
-    version: "command-r-08-2024"
+    display_name: "Cohere Command R 08-2024"
+    version: "command-r-08-2024"  # This is the actual model ID for API calls
     api_key_env: "COHERE_API_KEY"
+    api_url: "https://api.cohere.com/v2/chat"
     max_tokens: 128000
     context_window: 128000
     strengths:
@@ -101,9 +106,10 @@ models:
     provider: "cohere"
 
   command-r-08-2024-v003:
-    display_name: "Cohere Command R 003"
-    version: "command-r-08-2024"
+    display_name: "Cohere Command R 08-2024 v003"
+    version: "command-r-08-2024"  # Same model ID as v004, just different config name
     api_key_env: "COHERE_API_KEY"
+    api_url: "https://api.cohere.com/v2/chat"
     max_tokens: 128000
     context_window: 128000
     strengths:
@@ -121,9 +127,10 @@ models:
     provider: "cohere"
 
   command-r-03-2024:
-    display_name: "Cohere Command R 002"
-    version: "command-r-03-2024"
+    display_name: "Cohere Command R 03-2024"
+    version: "command-r-03-2024"  # This is the actual model ID for API calls
     api_key_env: "COHERE_API_KEY"
+    api_url: "https://api.cohere.com/v2/chat"
     max_tokens: 128000
     context_window: 128000
     strengths:
@@ -140,9 +147,10 @@ models:
     provider: "cohere"
 
   command-r:
-    display_name: "Cohere Command R 001"
-    version: "command-r"
+    display_name: "Cohere Command R"
+    version: "command-r"  # This is the actual model ID for API calls
     api_key_env: "COHERE_API_KEY"
+    api_url: "https://api.cohere.com/v2/chat"
     max_tokens: 128000
     context_window: 128000
     strengths:

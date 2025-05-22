@@ -13,6 +13,9 @@ class AnthropicClient(BaseClient):
     def __init__(self, model: str, config: Dict[str, Any]):
         super().__init__(model, config)
         self.client = anthropic.Anthropic(api_key=self.api_key)
+        # Use version field if available, otherwise use model name
+        self.model_id = config.get("version", model)
+        logger.info(f"Initialized Anthropic client for {model} (API model: {self.model_id})")
 
     def execute(self, test_case: Dict[str, Any]) -> Tuple[Dict[str, Any], Dict[str, Any]]:
         """Execute a test with Anthropic models"""
@@ -24,9 +27,9 @@ class AnthropicClient(BaseClient):
             # Start timing
             start_time = time.time()
 
-            # Make API call
+            # Make API call using the actual model ID
             response = self.client.messages.create(
-                model=self.model,
+                model=self.model_id,  # Use the version/model_id
                 max_tokens=params.get("max_tokens", 1000),
                 temperature=params.get("temperature", 0.7),
                 system=params.get("system_prompt", "You are a helpful AI assistant."),
@@ -48,7 +51,8 @@ class AnthropicClient(BaseClient):
             result = {
                 "success": True,
                 "content": content,
-                "model": self.model,
+                "model": self.model,  # Keep original model name for tracking
+                "api_model": self.model_id,  # Add actual API model ID
                 "provider": "anthropic"
             }
 
@@ -68,7 +72,7 @@ class AnthropicClient(BaseClient):
             params = parameters or {}
             
             response = self.client.messages.create(
-                model=self.model,
+                model=self.model_id,  # Use the version/model_id
                 max_tokens=params.get("max_tokens", 1000),
                 temperature=params.get("temperature", 0.7),
                 system=params.get("system_prompt", "You are a helpful AI assistant."),
@@ -78,7 +82,7 @@ class AnthropicClient(BaseClient):
             )
             return response.content[0].text
         except Exception as e:
-            logger.error(f"Error generating text with {self.model}: {e}")
+            logger.error(f"Error generating text with {self.model} (API: {self.model_id}): {e}")
             raise
 
     def _extract_usage(self, response: Any) -> Dict[str, Any]:

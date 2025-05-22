@@ -9,17 +9,21 @@ test_cases_dir: "test_cases"
 selected_models:
   # OpenAI models - CORRECTED
   - gpt-4o
-  # - gpt-4-turbo
-  # - gpt-4
-  # - gpt-4.1
-  # - gpt-4.5-preview  # Changed from o1_pro
-  # - gpt-3.5-turbo  # Added working model
+  - gpt-4-turbo
+  - gpt-4
+  - gpt-4.1
+  - gpt-4.5-preview  # Changed from o1_pro
+  - gpt-3.5-turbo  # Added working model
   
   # Anthropic models
-  # - claude-3-opus
-  # - claude-3-5-sonnet
-  # - claude-3-5-haiku
-  # - claude-3-7-sonnet
+    - claude-opus-4-20250514
+    - claude-sonnet-4-20250514
+    - claude-3-7-sonnet-20250219
+    - claude-3-5-sonnet-20241022
+    - claude-3-5-sonnet-20240620
+    - claude-3-5-haiku-20241022
+    - claude-3-haiku-20240307
+    - claude-3-opus-20240229
   
   # Google models
   # - gemini-2.5-pro-preview-03-25
@@ -34,19 +38,19 @@ selected_models:
   # - gemini-1.5-flash
   
   # Mistral models
-  # - mistral-small-latest
-  # - mistral-medium-latest
-  # - mistral-large-latest
+  - mistral-small-latest
+  - mistral-medium-latest
+  - mistral-large-latest
   
   # Cohere models
-  # - command-a-03-2025
-  # - command-r-plus-08-2024
-  # - command-r-plus-04-2024
-  # - command-r-plus
-  # - command-r-08-2024-v004
-  # - command-r-08-2024-v003
-  # - command-r-03-2024
-  # - command-r
+  - command-a-03-2025
+  - command-r-plus-08-2024
+  - command-r-plus-04-2024
+  - command-r-plus
+  - command-r-08-2024-v004
+  - command-r-08-2024-v003
+  - command-r-03-2024
+  - command-r
 
 # Test categories
 categories:
@@ -60,8 +64,8 @@ categories:
 
 # Test execution settings
 parallel_execution: false
-retry_count: 1  # Reduced for faster testing
-timeout: 120  # Reduced timeout
+retry_count: 2  # Reduced for faster testing
+timeout: 200  # Reduced timeout
 
 # Evaluation metrics
 evaluation:

@@ -1,25 +1,85 @@
-# configs/models/anthropic.yaml - FIXED STRUCTURE
+# configs/models/anthropic.yaml - FIXED WITH CORRECT MODEL KEYS
 models:
-  claude-3-opus:
-    display_name: "Claude 3 Opus"
-    version: "claude-3-opus-20240229"
+  claude-opus-4-20250514:
+    display_name: "Claude 4 Opus"
+    version: "claude-opus-4-20250514"
     api_key_env: "ANTHROPIC_API_KEY"
     max_tokens: 200000
     context_window: 200000
     strengths: 
+      - "Most capable model"
+      - "Complex reasoning"
+      - "Advanced analysis"
       - "Long context handling"
-      - "Advanced reasoning"
-      - "Instruction following"
     defaults:
       temperature: 0.7
       top_p: 0.9
       max_output_tokens: 4096
     cost:
-      input_per_1k: 15.0
-      output_per_1k: 75.0
+      input_per_1k: 20.0
+      output_per_1k: 100.0
     provider: "anthropic"
 
-  claude-3-5-sonnet:
+  claude-sonnet-4-20250514:
+    display_name: "Claude 4 Sonnet"
+    version: "claude-sonnet-4-20250514"
+    api_key_env: "ANTHROPIC_API_KEY"
+    max_tokens: 200000
+    context_window: 200000
+    strengths:
+      - "Smart and efficient"
+      - "Everyday use optimization"
+      - "Balanced performance"
+      - "Task planning"
+    defaults:
+      temperature: 0.7
+      top_p: 0.9
+      max_output_tokens: 4096
+    cost:
+      input_per_1k: 6.0
+      output_per_1k: 30.0
+    provider: "anthropic"
+
+  claude-3-7-sonnet-20250219:
+    display_name: "Claude 3.7 Sonnet"
+    version: "claude-3-7-sonnet-20250219"
+    api_key_env: "ANTHROPIC_API_KEY"
+    max_tokens: 200000
+    context_window: 200000
+    strengths:
+      - "Latest 3.x capabilities"
+      - "Enhanced reasoning"
+      - "Improved factual knowledge"
+    defaults:
+      temperature: 0.7
+      top_p: 0.9
+      max_output_tokens: 4096
+    cost:
+      input_per_1k: 5.0
+      output_per_1k: 25.0
+    provider: "anthropic"
+
+  claude-3-5-sonnet-20241022:
+    display_name: "Claude 3.5 Sonnet (Latest)"
+    version: "claude-3-5-sonnet-20241022"
+    api_key_env: "ANTHROPIC_API_KEY"
+    max_tokens: 200000
+    context_window: 200000
+    strengths:
+      - "Latest 3.5 improvements"
+      - "Enhanced capabilities"
+      - "Task planning"
+      - "Few-shot learning"
+    defaults:
+      temperature: 0.7
+      top_p: 0.9
+      max_output_tokens: 4096
+    cost:
+      input_per_1k: 3.0
+      output_per_1k: 15.0
+    provider: "anthropic"
+
+  claude-3-5-sonnet-20240620:
     display_name: "Claude 3.5 Sonnet"
     version: "claude-3-5-sonnet-20240620"
     api_key_env: "ANTHROPIC_API_KEY"
@@ -38,9 +98,29 @@ models:
       output_per_1k: 15.0
     provider: "anthropic"
 
-  claude-3-5-haiku:
+  claude-3-5-haiku-20241022:
     display_name: "Claude 3.5 Haiku"
-    version: "claude-3-5-haiku-20240307"
+    version: "claude-3-5-haiku-20241022"
+    api_key_env: "ANTHROPIC_API_KEY"
+    max_tokens: 200000
+    context_window: 200000
+    strengths:
+      - "Speed"
+      - "Cost efficiency"
+      - "Short-form responses"
+      - "Latest Haiku improvements"
+    defaults:
+      temperature: 0.7
+      top_p: 0.9
+      max_output_tokens: 4096
+    cost:
+      input_per_1k: 0.8
+      output_per_1k: 4.0
+    provider: "anthropic"
+
+  claude-3-haiku-20240307:
+    display_name: "Claude 3 Haiku"
+    version: "claude-3-haiku-20240307"
     api_key_env: "ANTHROPIC_API_KEY"
     max_tokens: 200000
     context_window: 200000
@@ -57,21 +137,21 @@ models:
       output_per_1k: 1.25
     provider: "anthropic"
 
-  claude-3-7-sonnet:
-    display_name: "Claude 3.7 Sonnet"
-    version: "claude-3-7-sonnet-20240620"
+  claude-3-opus-20240229:
+    display_name: "Claude 3 Opus"
+    version: "claude-3-opus-20240229"
     api_key_env: "ANTHROPIC_API_KEY"
     max_tokens: 200000
     context_window: 200000
-    strengths:
-      - "Latest capabilities"
-      - "Enhanced reasoning"
-      - "Improved factual knowledge"
+    strengths: 
+      - "Long context handling"
+      - "Advanced reasoning"
+      - "Instruction following"
     defaults:
       temperature: 0.7
       top_p: 0.9
       max_output_tokens: 4096
     cost:
-      input_per_1k: 5.0
-      output_per_1k: 25.0
+      input_per_1k: 15.0
+      output_per_1k: 75.0
     provider: "anthropic"
