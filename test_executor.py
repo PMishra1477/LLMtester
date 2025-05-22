@@ -600,23 +600,23 @@ class TestExecutor:
             aggregated_results: Aggregated test results
             output_path: Path to save the HTML report
         """
-        # Simple HTML report template
+        # Simple HTML report template - FIXED CSS escaping
         html_template = """
         <!DOCTYPE html>
         <html>
         <head>
             <title>Foundation Model Test Report</title>
             <style>
-                body { font-family: Arial, sans-serif; margin: 20px; }
-                h1, h2, h3 { color: #333; }
-                table { border-collapse: collapse; width: 100%; margin-bottom: 20px; }
-                th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
-                th { background-color: #f2f2f2; }
-                tr:nth-child(even) { background-color: #f9f9f9; }
-                .score-high { color: green; }
-                .score-medium { color: orange; }
-                .score-low { color: red; }
-                .summary-box { background-color: #f5f5f5; padding: 15px; border-radius: 5px; margin-bottom: 20px; }
+                body {{ font-family: Arial, sans-serif; margin: 20px; }}
+                h1, h2, h3 {{ color: #333; }}
+                table {{ border-collapse: collapse; width: 100%; margin-bottom: 20px; }}
+                th, td {{ border: 1px solid #ddd; padding: 8px; text-align: left; }}
+                th {{ background-color: #f2f2f2; }}
+                tr:nth-child(even) {{ background-color: #f9f9f9; }}
+                .score-high {{ color: green; }}
+                .score-medium {{ color: orange; }}
+                .score-low {{ color: red; }}
+                .summary-box {{ background-color: #f5f5f5; padding: 15px; border-radius: 5px; margin-bottom: 20px; }}
             </style>
         </head>
         <body>
