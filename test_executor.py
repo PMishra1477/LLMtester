@@ -137,15 +137,22 @@ class TestExecutor:
         # Create evaluator factory
         evaluator_factory = EvaluatorFactory()
 
-        # Track execution statistics
-        total_tests = sum(len(tests) for tests in self.test_cases.values())
+        # Track execution statistics - UPDATED to handle multiple prompts per test
+        total_prompt_executions = 0
+        for category_tests in self.test_cases.values():
+            for test_case in category_tests.values():
+                prompts = test_case.get("prompts", [])
+                if not prompts and test_case.get("prompt"):
+                    prompts = [{"text": test_case.get("prompt"), "id": "default"}]
+                total_prompt_executions += len(prompts) if prompts else 1
+        
         total_models = len(self.clients)
-        total_executions = total_tests * total_models
+        total_executions = total_prompt_executions * total_models
         completed = 0
         start_time = time.time()
 
         logger.info(f"Starting test execution: {total_executions} total executions "
-                   f"({total_tests} tests × {total_models} models)")
+                f"({total_prompt_executions} prompt tests × {total_models} models)")
 
         # Execute tests for each model and category
         for category, tests in self.test_cases.items():
@@ -163,95 +170,157 @@ class TestExecutor:
                 ensure_directory_exists(test_dir)
 
                 # Save the test case for reference
-                # Fix: Swap parameter order - file path first, then data
                 save_json(os.path.join(test_dir, "test_case.json"), test_case)
 
-                for model_name, client in self.clients.items():
-                    model_dir = os.path.join(test_dir, model_name)
-                    ensure_directory_exists(model_dir)
+                # Handle multiple prompts within a test case - FIXED PROMPT EXTRACTION
+                prompts = test_case.get("prompts", [])
+                
+                # If no prompts array, try to get direct prompt (legacy format)
+                if not prompts:
+                    direct_prompt = test_case.get("prompt", "")
+                    if direct_prompt:
+                        prompts = [{"text": direct_prompt, "id": "default"}]
+                
+                if not prompts:
+                    logger.error(f"No prompts found in test case {category}/{test_name} - skipping")
+                    continue
+                
+                for prompt_idx, prompt_data in enumerate(prompts):
+                    # Extract prompt information - FIXED
+                    if isinstance(prompt_data, dict):
+                        prompt = prompt_data.get("text", prompt_data.get("prompt", ""))
+                        context = prompt_data.get("context", "")
+                        parameters = prompt_data.get("parameters", {})
+                        prompt_id = prompt_data.get("id", f"prompt_{prompt_idx}")
+                    else:
+                        # Handle legacy format where prompt_data might be a string
+                        prompt = str(prompt_data)
+                        context = ""
+                        parameters = {}
+                        prompt_id = f"prompt_{prompt_idx}"
 
-                    logger.info(f"Executing test: {category}/{test_name} with model: {model_name}")
+                    # Safety check for empty prompts - ADDED
+                    if not prompt or len(prompt.strip()) == 0:
+                        logger.error(f"Empty prompt for test {category}/{test_name}, prompt {prompt_id} - skipping")
+                        continue
 
-                    try:
-                        # Execute the test
-                        prompt = test_case.get("prompt", "")
-                        context = test_case.get("context", "")
-                        parameters = test_case.get("parameters", {})
+                    test_identifier = f"{category}/{test_name}"
+                    if len(prompts) > 1:
+                        test_identifier += f"__{prompt_id}"
 
-                        # Record start time
-                        test_start_time = time.time()
+                    for model_name, client in self.clients.items():
+                        model_dir = os.path.join(test_dir, model_name)
+                        ensure_directory_exists(model_dir)
 
-                        # Get response from model
-                        response = client.generate(prompt, context, parameters)
+                        logger.info(f"Executing test: {test_identifier} with model: {model_name}")
+                        logger.debug(f"Prompt preview: {prompt[:100]}...")
 
-                        # Record end time and calculate duration
-                        test_end_time = time.time()
-                        duration = test_end_time - test_start_time
+                        try:
+                            # Record start time
+                            test_start_time = time.time()
 
-                        # Evaluate the response
-                        evaluation = evaluator.evaluate(test_case, response)
+                            # Get response from model
+                            response = client.generate(prompt, context, parameters)
 
-                        # Add metadata
-                        result = {
-                            "test_case": test_case,
-                            "response": response,
-                            "evaluation": evaluation,
-                            "metadata": {
+                            # Record end time and calculate duration
+                            test_end_time = time.time()
+                            duration = test_end_time - test_start_time
+
+                            # Prepare data for evaluation - FIXED EVALUATOR INTERFACE
+                            response_data = {
+                                "content": response,
+                                "success": True,
                                 "model": model_name,
-                                "category": category,
-                                "test_name": test_name,
-                                "timestamp": datetime.now().isoformat(),
-                                "duration": duration
+                                "provider": getattr(client, "config", {}).get("provider", "unknown")
                             }
-                        }
 
-                        # Save result
-                        # Fix: Swap parameter order - file path first, then data
-                        save_json(os.path.join(model_dir, "result.json"), result)
-
-                        # Store in results dictionary
-                        self.results[model_name][category][test_name] = result
-
-                        logger.debug(f"Test completed: {category}/{test_name} with model: {model_name}")
-                        logger.debug(f"Score: {evaluation.get('score', 'N/A')}, Duration: {duration:.2f}s")
-
-                    except Exception as e:
-                        logger.error(f"Error executing test {category}/{test_name} with model {model_name}: {e}")
-                        logger.error(traceback.format_exc())
-
-                        # Record failure
-                        error_result = {
-                            "test_case": test_case,
-                            "error": str(e),
-                            "traceback": traceback.format_exc(),
-                            "metadata": {
-                                "model": model_name,
-                                "category": category,
-                                "test_name": test_name,
-                                "timestamp": datetime.now().isoformat(),
-                                "status": "failed"
+                            evaluation_test_case = {
+                                "prompt": prompt,
+                                "context": context,
+                                "parameters": parameters,
+                                "expected_elements": test_case.get("expected_elements", []),
+                                "evaluation_criteria": test_case.get("evaluation_criteria", {}),
+                                "reference_data": test_case.get("reference_data", {}),
+                                "reference_facts": test_case.get("reference_facts", {})
                             }
-                        }
 
-                        # Save error result
-                        # Fix: Swap parameter order - file path first, then data
-                        save_json(os.path.join(model_dir, "error.json"), error_result)
+                            # Evaluate the response - FIXED PARAMETER ORDER
+                            evaluation = evaluator.evaluate(response_data, evaluation_test_case)
 
-                        # Store in results dictionary
-                        self.results[model_name][category][test_name] = error_result
+                            # Add metadata
+                            result = {
+                                "test_case": evaluation_test_case,
+                                "response": response,
+                                "evaluation": evaluation,
+                                "metadata": {
+                                    "model": model_name,
+                                    "category": category,
+                                    "test_name": test_name,
+                                    "prompt_id": prompt_id,
+                                    "prompt_index": prompt_idx,
+                                    "timestamp": datetime.now().isoformat(),
+                                    "duration": duration
+                                }
+                            }
 
-                    # Update progress
-                    completed += 1
-                    elapsed = time.time() - start_time
-                    avg_time = elapsed / completed
-                    remaining = avg_time * (total_executions - completed)
+                            # Save result - UPDATED for multiple prompts
+                            result_filename = f"result__{prompt_id}.json" if len(prompts) > 1 else "result.json"
+                            save_json(os.path.join(model_dir, result_filename), result)
 
-                    logger.info(f"Progress: {completed}/{total_executions} "
-                               f"({completed/total_executions*100:.1f}%) - "
-                               f"Elapsed: {elapsed:.1f}s, Remaining: {remaining:.1f}s")
+                            # Store in results dictionary - UPDATED for multiple prompts
+                            result_key = f"{test_name}__{prompt_id}" if len(prompts) > 1 else test_name
+                            self.results[model_name][category][result_key] = result
+
+                            score = evaluation.get("score", "N/A")
+                            logger.info(f"Test completed: {test_identifier} with model: {model_name}")
+                            logger.info(f"Score: {score}, Duration: {duration:.2f}s")
+
+                        except Exception as e:
+                            logger.error(f"Error executing test {test_identifier} with model {model_name}: {e}")
+                            logger.error(traceback.format_exc())
+
+                            # Record failure
+                            error_result = {
+                                "test_case": {
+                                    "prompt": prompt,
+                                    "context": context,
+                                    "parameters": parameters
+                                },
+                                "error": str(e),
+                                "traceback": traceback.format_exc(),
+                                "metadata": {
+                                    "model": model_name,
+                                    "category": category,
+                                    "test_name": test_name,
+                                    "prompt_id": prompt_id,
+                                    "prompt_index": prompt_idx,
+                                    "timestamp": datetime.now().isoformat(),
+                                    "status": "failed"
+                                }
+                            }
+
+                            # Save error result - UPDATED for multiple prompts
+                            error_filename = f"error__{prompt_id}.json" if len(prompts) > 1 else "error.json"
+                            save_json(os.path.join(model_dir, error_filename), error_result)
+
+                            # Store in results dictionary - UPDATED for multiple prompts
+                            result_key = f"{test_name}__{prompt_id}" if len(prompts) > 1 else test_name
+                            self.results[model_name][category][result_key] = error_result
+
+                        # Update progress
+                        completed += 1
+                        elapsed = time.time() - start_time
+                        if completed > 0:
+                            avg_time = elapsed / completed
+                            remaining = avg_time * (total_executions - completed)
+                        else:
+                            remaining = 0
+
+                        logger.info(f"Progress: {completed}/{total_executions} "
+                                f"({completed/total_executions*100:.1f}%) - "
+                                f"Elapsed: {elapsed:.1f}s, Remaining: {remaining:.1f}s")
 
         # Save complete results
-        # Fix: Swap parameter order - file path first, then data
         save_json(os.path.join(self.run_dir, "all_results.json"), self.results)
 
         total_time = time.time() - start_time

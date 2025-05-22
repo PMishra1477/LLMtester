@@ -1,6 +1,6 @@
 # configs/models/openai.yaml - CORRECTED WITH REAL MODEL NAMES
 models:
-  gpt_4o:
+  gpt-4o:
     display_name: "GPT-4o"
     version: "gpt-4o"  # This is the correct name
     api_key_env: "OPENAI_API_KEY"
@@ -21,7 +21,7 @@ models:
       output_per_1k: 15.0
     provider: "openai"
 
-  gpt_4_turbo:
+  gpt-4-turbo:
     display_name: "GPT-4 Turbo"
     version: "gpt-4-turbo"  # This is the correct name
     api_key_env: "OPENAI_API_KEY"
@@ -42,7 +42,7 @@ models:
       output_per_1k: 30.0
     provider: "openai"
 
-  gpt_4:
+  gpt-4:
     display_name: "GPT-4"
     version: "gpt-4"  # This is the correct name
     api_key_env: "OPENAI_API_KEY"
@@ -63,9 +63,9 @@ models:
       output_per_1k: 60.0
     provider: "openai"
 
-  o1_preview:
-    display_name: "O1 Preview"
-    version: "o1-preview"  # This is the correct name
+  gpt-4.1:
+    display_name: "GPT-4.1"
+    version: "gpt-4.1"  # This is the correct name
     api_key_env: "OPENAI_API_KEY"
     org_id_env: "OPENAI_ORG_ID"
     max_tokens: 128000
@@ -85,9 +85,9 @@ models:
       output_per_1k: 60.0
     provider: "openai"
 
-  o1_mini:
-    display_name: "O1 Mini"
-    version: "o1-mini"  # This is the correct name (not o1-pro)
+  gpt-4.5-preview:
+    display_name: "gpt-4.5-preview"
+    version: "gpt-4.5-preview"  # This is the correct name (not o1-pro)
     api_key_env: "OPENAI_API_KEY"
     org_id_env: "OPENAI_ORG_ID"
     max_tokens: 128000
@@ -106,7 +106,7 @@ models:
       output_per_1k: 12.0
     provider: "openai"
 
-  gpt_3_5_turbo:
+  gpt-3.5-turbo:
     display_name: "GPT-3.5 Turbo"
     version: "gpt-3.5-turbo"
     api_key_env: "OPENAI_API_KEY"

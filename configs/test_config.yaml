@@ -8,45 +8,45 @@ test_cases_dir: "test_cases"
 # All models from your configuration files - CORRECTED NAMES
 selected_models:
   # OpenAI models - CORRECTED
-  - gpt_4o
-  - gpt_4_turbo
-  - gpt_4
-  - o1_preview
-  - o1_mini  # Changed from o1_pro
-  - gpt_3_5_turbo  # Added working model
+  - gpt-4o
+  - gpt-4-turbo
+  - gpt-4
+  - gpt-4.1
+  - gpt-4.5-preview  # Changed from o1_pro
+  - gpt-3.5-turbo  # Added working model
   
   # Anthropic models
-  - claude_3_opus
-  - claude_3_5_sonnet
-  - claude_3_5_haiku
-  - claude_3_7_sonnet
+  - claude-3-opus
+  - claude-3-5-sonnet
+  - claude-3-5-haiku
+  - claude-3-7-sonnet
   
   # Google models
-  - gemini_2_5_pro_preview_05_06
-  - gemini_2_5_pro_preview_03_25
-  - gemini_2_5_pro_exp_03_25
-  - gemini_2_5_flash_preview_04_17
-  - gemini_2_5_flash_preview_04_17_thinking
-  - gemini_2_0_pro_exp
-  - gemini_2_0_flash
-  - gemini_2_0_flash_thinking_exp
-  - gemini_1_5_pro
-  - gemini_1_5_flash
+  - gemini-2.5-pro-preview-03-25
+  - gemini-2.5-pro-exp-03-25
+  - gemini-2.5-pro-preview-05-06
+  - gemini-2.5-flash-preview-04-17
+  - gemini-2.5-flash-preview-04-17-thinking
+  - gemini-2.0-pro-exp
+  - gemini-2.0-flash
+  - gemini-2.0-flash-thinking-exp
+  - gemini-1.5-pro
+  - gemini-1.5-flash
   
   # Mistral models
-  - mistral_small
-  - mistral_medium
-  - mistral_large
+  - mistral-small-latest
+  - mistral-medium-latest
+  - mistral-large-latest
   
   # Cohere models
-  - command_a_03_2025
-  - command_r_plus_08_2024
-  - command_r_plus_04_2024
-  - command_r_plus
-  - command_r_08_2024_v004
-  - command_r_08_2024_v003
-  - command_r_03_2024
-  - command_r
+  - command-a-03-2025
+  - command-r-plus-08-2024
+  - command-r-plus-04-2024
+  - command-r-plus
+  - command-r-08-2024-v004
+  - command-r-08-2024-v003
+  - command-r-03-2024
+  - command-r
 
 # Test categories
 categories:

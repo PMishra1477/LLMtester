@@ -1,6 +1,6 @@
 # configs/models/cohere.yaml - FIXED STRUCTURE (rename from others.yaml)
 models:
-  command_a_03_2025:
+  command-a-03-2025:
     display_name: "Cohere Command A"
     version: "command-a-03-2025"
     api_key_env: "COHERE_API_KEY"
@@ -20,7 +20,7 @@ models:
       output_per_1k: 15.0
     provider: "cohere"
 
-  command_r_plus_08_2024:
+  command-r-plus-08-2024:
     display_name: "Cohere Command R+ 003"
     version: "command-r-plus-08-2024"
     api_key_env: "COHERE_API_KEY"
@@ -40,7 +40,7 @@ models:
       output_per_1k: 15.0
     provider: "cohere"
 
-  command_r_plus_04_2024:
+  command-r-plus-04-2024:
     display_name: "Cohere Command R+ 002"
     version: "command-r-plus-04-2024"
     api_key_env: "COHERE_API_KEY"
@@ -60,7 +60,7 @@ models:
       output_per_1k: 15.0
     provider: "cohere"
 
-  command_r_plus:
+  command-r-plus:
     display_name: "Cohere Command R+ 001"
     version: "command-r-plus"
     api_key_env: "COHERE_API_KEY"
@@ -80,7 +80,7 @@ models:
       output_per_1k: 15.0
     provider: "cohere"
 
-  command_r_08_2024_v004:
+  command-r-08-2024-v004:
     display_name: "Cohere Command R 004"
     version: "command-r-08-2024"
     api_key_env: "COHERE_API_KEY"
@@ -100,7 +100,7 @@ models:
       output_per_1k: 5.0
     provider: "cohere"
 
-  command_r_08_2024_v003:
+  command-r-08-2024-v003:
     display_name: "Cohere Command R 003"
     version: "command-r-08-2024"
     api_key_env: "COHERE_API_KEY"
@@ -120,7 +120,7 @@ models:
       output_per_1k: 5.0
     provider: "cohere"
 
-  command_r_03_2024:
+  command-r-03-2024:
     display_name: "Cohere Command R 002"
     version: "command-r-03-2024"
     api_key_env: "COHERE_API_KEY"
@@ -139,7 +139,7 @@ models:
       output_per_1k: 5.0
     provider: "cohere"
 
-  command_r:
+  command-r:
     display_name: "Cohere Command R 001"
     version: "command-r"
     api_key_env: "COHERE_API_KEY"

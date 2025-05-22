@@ -1,6 +1,6 @@
 # configs/models/mistral.yaml - FIXED STRUCTURE
 models:
-  mistral_small:
+  mistral-small-latest:
     display_name: "Mistral Small"
     version: "mistral-small-latest"
     api_key_env: "MISTRAL_API_KEY"
@@ -19,7 +19,7 @@ models:
       output_per_1k: 0.6
     provider: "mistral"
 
-  mistral_medium:
+  mistral-medium-latest:
     display_name: "Mistral Medium"
     version: "mistral-medium-latest"
     api_key_env: "MISTRAL_API_KEY"
@@ -38,7 +38,7 @@ models:
       output_per_1k: 8.1
     provider: "mistral"
 
-  mistral_large:
+  mistral-large-latest:
     display_name: "Mistral Large"
     version: "mistral-large-latest"
     api_key_env: "MISTRAL_API_KEY"
