@@ -1,0 +1,52 @@
+
+{
+  "name": "Industry Adaptation",
+  "description": "Tests the model's ability to adapt presentation content to specific industries and sectors",
+  "category": "personalization",
+  "prompts": [
+    {
+      "id": "healthcare_adaptation",
+      "text": "Create a presentation about data security that is specifically adapted for the healthcare industry. The presentation should address HIPAA compliance, patient data protection, healthcare-specific security threats, and industry best practices. Use relevant healthcare examples, terminology, and scenarios that would resonate with hospital administrators and medical professionals.",
+      "expected_elements": [
+        "Healthcare-specific regulations (HIPAA)",
+        "Patient data protection examples",
+        "Medical terminology and contexts",
+        "Healthcare industry threats and challenges",
+        "Relevant case studies from healthcare settings"
+      ]
+    },
+    {
+      "id": "financial_adaptation",
+      "text": "Create a presentation about the same topic (data security) but adapted specifically for the financial services industry. The presentation should address financial regulations (like PCI DSS, SOX), banking security protocols, financial fraud prevention, and industry best practices. Use relevant financial sector examples, terminology, and scenarios that would resonate with banking executives and financial professionals.",
+      "expected_elements": [
+        "Financial industry regulations",
+        "Banking security protocols",
+        "Financial fraud prevention strategies",
+        "Financial terminology and contexts",
+        "Relevant case studies from financial institutions"
+      ]
+    }
+  ],
+  "evaluation_criteria": {
+    "industry_relevance": {
+      "description": "Relevance to the specified industry",
+      "weight": 0.3
+    },
+    "sector_knowledge": {
+      "description": "Demonstrated knowledge of industry specifics",
+      "weight": 0.25
+    },
+    "terminology_appropriateness": {
+      "description": "Appropriate use of industry terminology",
+      "weight": 0.25
+    },
+    "contextual_adaptation": {
+      "description": "Adaptation of content to industry context",
+      "weight": 0.2
+    }
+  },
+  "metrics": {
+    "primary": "industry_adaptation_score",
+    "secondary": ["sector_relevance", "industry_specificity"]
+  }
+}

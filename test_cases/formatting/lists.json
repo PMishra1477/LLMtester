@@ -1,0 +1,52 @@
+
+{
+  "name": "List Formatting",
+  "description": "Tests the model's ability to properly format and structure lists in presentations",
+  "category": "formatting",
+  "prompts": [
+    {
+      "id": "bullet_list_formatting",
+      "text": "Create a presentation about project management best practices. Use properly formatted bullet lists on at least 3 slides. Each list should have a clear hierarchy with main points and sub-points properly indented. Use consistent bullet styles with round bullets for main points and dashes for sub-points.",
+      "expected_elements": [
+        "Properly indented hierarchical lists",
+        "Consistent bullet styles across slides",
+        "Clear visual hierarchy in lists",
+        "Proper spacing between list items",
+        "Parallel structure in list items"
+      ]
+    },
+    {
+      "id": "numbered_list_formatting",
+      "text": "Create a presentation outlining a 5-step process for strategic planning. Use properly formatted numbered lists for the process steps. Each numbered step should have 2-3 bullet points explaining key actions. Ensure consistent formatting, proper indentation, and logical numbering throughout the presentation.",
+      "expected_elements": [
+        "Sequential numbered lists",
+        "Consistent numbering format",
+        "Proper indentation of sub-points",
+        "Logical progression in numbered items",
+        "Consistent formatting across slides"
+      ]
+    }
+  ],
+  "evaluation_criteria": {
+    "hierarchy_clarity": {
+      "description": "Clear visual hierarchy in list structures",
+      "weight": 0.25
+    },
+    "consistency": {
+      "description": "Consistent list formatting throughout",
+      "weight": 0.25
+    },
+    "indentation_accuracy": {
+      "description": "Proper indentation of list levels",
+      "weight": 0.25
+    },
+    "bullet_style_appropriateness": {
+      "description": "Appropriate use of bullet styles and numbering",
+      "weight": 0.25
+    }
+  },
+  "metrics": {
+    "primary": "list_formatting_score",
+    "secondary": ["hierarchy_clarity_rating", "formatting_consistency"]
+  }
+}

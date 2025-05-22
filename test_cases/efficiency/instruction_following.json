@@ -1,0 +1,54 @@
+
+{
+  "name": "Instruction Following",
+  "description": "Tests the model's ability to precisely follow detailed instructions for presentation creation",
+  "category": "efficiency",
+  "prompts": [
+    {
+      "id": "precise_formatting",
+      "text": "Create a presentation about digital marketing with these specific formatting requirements: 1) Slide titles must be in sentence case, not title case, 2) All bullet points must start with action verbs, 3) Use only square bullet points, not circles or dashes, 4) Include exactly 3 bullet points per content slide, 5) Use blue (#0000FF) for titles and black for body text, 6) Include slide numbers in the bottom right corner.",
+      "expected_elements": [
+        "Sentence case titles",
+        "Action verbs starting all bullet points",
+        "Square bullet points only",
+        "Exactly 3 bullet points per content slide",
+        "Specified color usage",
+        "Slide numbers in bottom right"
+      ]
+    },
+    {
+      "id": "complex_instructions",
+      "text": "Create a product comparison presentation following these instructions: 1) Create a 2x3 comparison table on slide 2, 2) Use green checkmarks for positive features and red X marks for negative features, 3) Include a radar chart on slide 3 comparing 5 specific attributes, 4) On slide 4, create a pros and cons list with pros on the left and cons on the right, 5) Add footnotes to any slides containing statistical claims, 6) End with a recommendation slide that uses a specific 70/30 layout with image on the left.",
+      "expected_elements": [
+        "2x3 comparison table on slide 2",
+        "Green checkmarks and red X marks as specified",
+        "Radar chart with 5 attributes on slide 3",
+        "Pros/cons list with specified layout on slide 4",
+        "Footnotes for statistical claims",
+        "Recommendation slide with 70/30 layout"
+      ]
+    }
+  ],
+  "evaluation_criteria": {
+    "instruction_precision": {
+      "description": "Precision in following specific instructions",
+      "weight": 0.4
+    },
+    "detail_adherence": {
+      "description": "Adherence to detailed requirements",
+      "weight": 0.3
+    },
+    "formatting_accuracy": {
+      "description": "Accuracy in implementing formatting instructions",
+      "weight": 0.2
+    },
+    "specification_implementation": {
+      "description": "Implementation of all specifications",
+      "weight": 0.1
+    }
+  },
+  "metrics": {
+    "primary": "instruction_following_score",
+    "secondary": ["precision_rate", "requirement_implementation_rate"]
+  }
+}

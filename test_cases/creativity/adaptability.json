@@ -1,0 +1,50 @@
+
+{
+  "name": "Creative Adaptability",
+  "description": "Tests the model's ability to adapt creative approaches to different contexts and constraints",
+  "category": "creativity",
+  "prompts": [
+    {
+      "id": "resource_constraints",
+      "text": "Create a presentation for a non-profit organization with very limited resources. The presentation needs to explain their community literacy program to potential donors, but must be designed to work without internet access, special equipment, or professional design software. Develop a creative approach that works within these constraints.",
+      "expected_elements": [
+        "Creative solutions for resource limitations",
+        "Adaptable presentation formats",
+        "Low-tech but effective visual suggestions",
+        "Alternative approaches to standard presentation elements"
+      ]
+    },
+    {
+      "id": "audience_adaptation",
+      "text": "Create a presentation about cybersecurity that can be adapted for three different audiences: 1) Technical IT professionals, 2) C-suite executives, and 3) General employees with minimal technical knowledge. Show how the core content can be creatively adapted for each audience while maintaining the essential security messages.",
+      "expected_elements": [
+        "Creative adaptation of technical content",
+        "Audience-specific approaches",
+        "Flexible content structure",
+        "Innovative ways to present the same information differently"
+      ]
+    }
+  ],
+  "evaluation_criteria": {
+    "constraint_navigation": {
+      "description": "Creative solutions within given constraints",
+      "weight": 0.3
+    },
+    "contextual_adaptation": {
+      "description": "Adaptation to different contexts or audiences",
+      "weight": 0.3
+    },
+    "flexible_thinking": {
+      "description": "Flexibility in approach and execution",
+      "weight": 0.2
+    },
+    "resourcefulness": {
+      "description": "Creative use of available resources",
+      "weight": 0.2
+    }
+  },
+  "metrics": {
+    "primary": "adaptability_score",
+    "secondary": ["constraint_creativity", "audience_versatility"]
+  }
+}

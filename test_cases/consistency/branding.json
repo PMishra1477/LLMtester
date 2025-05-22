@@ -1,0 +1,51 @@
+
+{
+  "name": "Branding Consistency",
+  "description": "Tests the model's ability to maintain consistent branding elements throughout a presentation",
+  "category": "consistency",
+  "prompts": [
+    {
+      "id": "brand_guidelines",
+      "text": "Create a presentation about our new product launch. Use our brand colors (blue #1A73E8 and green #34A853) and include our logo on each slide. The presentation should maintain our brand voice which is professional but approachable. Our company name is TechInnovate and our slogan is 'Transforming Tomorrow Today'.",
+      "expected_elements": [
+        "Consistent use of specified colors",
+        "Logo placement on each slide",
+        "Consistent brand voice",
+        "Proper company name usage",
+        "Slogan inclusion"
+      ]
+    },
+    {
+      "id": "multi_brand_elements",
+      "text": "Create a 5-slide presentation for GlobalTech's annual report. The slides should consistently use the company's dark blue (#0B3D91) and silver (#C0C0C0) color scheme. Each slide should have the GlobalTech logo in the bottom right corner and use the Helvetica font family. Maintain a formal tone throughout the presentation.",
+      "expected_elements": [
+        "Consistent color scheme across all slides",
+        "Logo placement in specified position",
+        "Consistent font usage",
+        "Formal tone maintained throughout"
+      ]
+    }
+  ],
+  "evaluation_criteria": {
+    "color_consistency": {
+      "description": "Consistent use of specified brand colors",
+      "weight": 0.3
+    },
+    "logo_placement": {
+      "description": "Proper and consistent logo placement",
+      "weight": 0.2
+    },
+    "tone_consistency": {
+      "description": "Maintaining consistent brand voice/tone",
+      "weight": 0.3
+    },
+    "brand_element_usage": {
+      "description": "Correct usage of brand elements (name, slogan, etc.)",
+      "weight": 0.2
+    }
+  },
+  "metrics": {
+    "primary": "consistency_score",
+    "secondary": ["brand_adherence", "visual_cohesion"]
+  }
+}

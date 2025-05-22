@@ -1,0 +1,52 @@
+
+{
+  "name": "Content Organization",
+  "description": "Tests the model's ability to organize presentation content effectively within PowerPoint structures",
+  "category": "ppt",
+  "prompts": [
+    {
+      "id": "information_hierarchy",
+      "text": "Create a presentation about artificial intelligence with clear information hierarchy. Organize the content with primary topics, subtopics, and supporting details properly structured across slides. Use appropriate heading levels, parent-child relationships between slides, and visual hierarchy to distinguish between main points and supporting information. Ensure the organization helps the audience understand the relationships between different concepts.",
+      "expected_elements": [
+        "Clear distinction between main topics and subtopics",
+        "Logical parent-child slide relationships",
+        "Appropriate heading hierarchy",
+        "Visual differentiation of information levels",
+        "Coherent information flow and structure"
+      ]
+    },
+    {
+      "id": "content_chunking",
+      "text": "Create a training presentation about project management methodologies. Organize the content into logical, digestible chunks across slides. Use appropriate slide breaks, topic grouping, and progressive disclosure of complex information. Ensure related content is grouped together, and new concepts are introduced in a logical sequence with appropriate transitions between content sections.",
+      "expected_elements": [
+        "Logical content chunking across slides",
+        "Appropriate information density per slide",
+        "Effective topic grouping",
+        "Sequential introduction of concepts",
+        "Clear transitions between content sections"
+      ]
+    }
+  ],
+  "evaluation_criteria": {
+    "logical_structure": {
+      "description": "Logical organization of content structure",
+      "weight": 0.3
+    },
+    "information_hierarchy": {
+      "description": "Clear hierarchy of information",
+      "weight": 0.25
+    },
+    "content_grouping": {
+      "description": "Effective grouping of related content",
+      "weight": 0.25
+    },
+    "progressive_disclosure": {
+      "description": "Appropriate progressive disclosure of information",
+      "weight": 0.2
+    }
+  },
+  "metrics": {
+    "primary": "organization_score",
+    "secondary": ["structure_clarity", "information_flow"]
+  }
+}

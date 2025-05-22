@@ -1,0 +1,52 @@
+
+{
+  "name": "Token Efficiency",
+  "description": "Tests the model's ability to create effective presentations with efficient token usage",
+  "category": "efficiency",
+  "prompts": [
+    {
+      "id": "concise_explanation",
+      "text": "Create a presentation explaining quantum computing principles in the most token-efficient way possible. The presentation should cover the basic concepts, key applications, and future outlook, but use minimal text while maintaining clarity and effectiveness. Aim for maximum information density with minimal token usage.",
+      "expected_elements": [
+        "Coverage of all required topics",
+        "Concise, efficient language",
+        "High information density",
+        "Minimal redundancy",
+        "Effective communication despite brevity"
+      ]
+    },
+    {
+      "id": "efficient_instructions",
+      "text": "Create a step-by-step tutorial presentation for setting up a home network. The presentation must be comprehensive enough to guide a beginner through the entire process but use the minimum necessary text on each slide. Focus on efficient instruction delivery with no unnecessary words or explanations.",
+      "expected_elements": [
+        "Complete process coverage",
+        "Minimal but sufficient instructions",
+        "Efficient language",
+        "No unnecessary content",
+        "Clear guidance despite brevity"
+      ]
+    }
+  ],
+  "evaluation_criteria": {
+    "information_density": {
+      "description": "Amount of useful information per token",
+      "weight": 0.3
+    },
+    "conciseness": {
+      "description": "Efficiency of language and explanation",
+      "weight": 0.3
+    },
+    "redundancy_avoidance": {
+      "description": "Avoidance of unnecessary repetition",
+      "weight": 0.2
+    },
+    "brevity_with_clarity": {
+      "description": "Maintaining clarity while being brief",
+      "weight": 0.2
+    }
+  },
+  "metrics": {
+    "primary": "token_efficiency_score",
+    "secondary": ["information_density_ratio", "conciseness_rating"]
+  }
+}

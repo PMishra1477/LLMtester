@@ -1,0 +1,53 @@
+
+{
+  "name": "Task Completeness",
+  "description": "Tests the model's ability to completely fulfill all requirements of a presentation task",
+  "category": "efficiency",
+  "prompts": [
+    {
+      "id": "multi_requirement_fulfillment",
+      "text": "Create a marketing presentation for a new smartphone with the following specific requirements: 1) Include exactly 7 slides, 2) Cover product features, target demographics, competitive advantages, pricing strategy, and launch timeline, 3) Include speaker notes for each slide, 4) Suggest 3 data visualizations, and 5) Provide a slide transition recommendation between each slide.",
+      "expected_elements": [
+        "Exactly 7 slides",
+        "All 5 content areas covered",
+        "Speaker notes for each slide",
+        "3 data visualization suggestions",
+        "Slide transition recommendations"
+      ]
+    },
+    {
+      "id": "complex_specifications",
+      "text": "Create a quarterly business review presentation with these requirements: 1) An executive summary slide with 3 key highlights, 2) Financial results comparing to both previous quarter and same quarter last year, 3) Department-specific metrics for Sales, Marketing, and Operations, 4) Risk assessment section with at least 2 identified risks and mitigation strategies, 5) Next quarter goals with specific KPIs, and 6) An appendix with supporting data tables.",
+      "expected_elements": [
+        "Executive summary with exactly 3 highlights",
+        "Financial comparisons to both time periods",
+        "Metrics for all 3 specified departments",
+        "Risk section with at least 2 risks and mitigations",
+        "Next quarter goals with specific KPIs",
+        "Appendix with data tables"
+      ]
+    }
+  ],
+  "evaluation_criteria": {
+    "requirement_fulfillment": {
+      "description": "Fulfillment of all specified requirements",
+      "weight": 0.4
+    },
+    "instruction_adherence": {
+      "description": "Strict adherence to provided instructions",
+      "weight": 0.3
+    },
+    "specification_coverage": {
+      "description": "Coverage of all specified elements",
+      "weight": 0.2
+    },
+    "detail_implementation": {
+      "description": "Implementation of specified details",
+      "weight": 0.1
+    }
+  },
+  "metrics": {
+    "primary": "completeness_score",
+    "secondary": ["requirement_fulfillment_rate", "instruction_adherence_rate"]
+  }
+}

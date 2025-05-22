@@ -1,0 +1,52 @@
+
+{
+  "name": "Audience Targeting",
+  "description": "Tests the model's ability to tailor presentation content to specific audience types",
+  "category": "personalization",
+  "prompts": [
+    {
+      "id": "executive_audience",
+      "text": "Create a presentation about a new enterprise software solution specifically targeted to C-level executives. The presentation should address executive priorities like ROI, strategic alignment, competitive advantage, and risk management. Use language, examples, and visuals that would resonate with a high-level executive audience with limited technical knowledge but strong business acumen.",
+      "expected_elements": [
+        "Executive-level language and terminology",
+        "Focus on strategic business impacts",
+        "High-level overview without technical details",
+        "ROI and business value emphasis",
+        "Concise, time-respectful content structure"
+      ]
+    },
+    {
+      "id": "technical_audience",
+      "text": "Create a presentation about the same enterprise software solution, but targeted to IT professionals and technical implementation teams. The presentation should address technical specifications, integration requirements, security features, and implementation processes. Use appropriate technical language, detailed examples, and visuals that would resonate with a technically sophisticated audience.",
+      "expected_elements": [
+        "Technical terminology and specifications",
+        "Detailed implementation information",
+        "Technical diagrams and visualizations",
+        "System architecture details",
+        "Technical requirements and considerations"
+      ]
+    }
+  ],
+  "evaluation_criteria": {
+    "audience_relevance": {
+      "description": "Relevance of content to specified audience",
+      "weight": 0.3
+    },
+    "language_appropriateness": {
+      "description": "Appropriateness of language and terminology for audience",
+      "weight": 0.25
+    },
+    "content_prioritization": {
+      "description": "Prioritization of content based on audience needs",
+      "weight": 0.25
+    },
+    "engagement_approach": {
+      "description": "Audience-appropriate engagement strategies",
+      "weight": 0.2
+    }
+  },
+  "metrics": {
+    "primary": "audience_targeting_score",
+    "secondary": ["relevance_rating", "audience_appropriateness"]
+  }
+}

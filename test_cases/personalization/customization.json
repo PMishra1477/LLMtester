@@ -1,0 +1,52 @@
+
+{
+  "name": "Content Customization",
+  "description": "Tests the model's ability to customize presentation content based on specific requirements and preferences",
+  "category": "personalization",
+  "prompts": [
+    {
+      "id": "brand_customization",
+      "text": "Create a presentation about digital marketing strategies that is fully customized for a luxury fashion brand called 'Elegance'. The presentation should reflect the brand's sophisticated aesthetic, use their brand colors (gold #D4AF37 and black #000000), incorporate fashion industry examples, and align with luxury market positioning. The content should feel specifically created for this brand, not generic.",
+      "expected_elements": [
+        "Brand-specific examples and references",
+        "Alignment with luxury positioning",
+        "Use of specified brand colors",
+        "Fashion industry relevance",
+        "Sophisticated tone matching brand identity"
+      ]
+    },
+    {
+      "id": "personal_style_customization",
+      "text": "Create a presentation about leadership development customized for a speaker with an energetic, story-driven presentation style. The speaker prefers minimal text on slides, uses personal anecdotes frequently, likes to incorporate audience interaction every 3-4 slides, and uses humor to engage audiences. Customize the presentation to match this personal presentation style.",
+      "expected_elements": [
+        "Minimal text slide design",
+        "Placeholders for personal anecdotes",
+        "Planned audience interaction points",
+        "Opportunities for humor",
+        "Energetic, conversational tone"
+      ]
+    }
+  ],
+  "evaluation_criteria": {
+    "customization_depth": {
+      "description": "Depth and thoroughness of customization",
+      "weight": 0.3
+    },
+    "requirement_integration": {
+      "description": "Integration of specific customization requirements",
+      "weight": 0.3
+    },
+    "personalization_relevance": {
+      "description": "Relevance of personalization choices",
+      "weight": 0.2
+    },
+    "generic_avoidance": {
+      "description": "Avoidance of generic, non-customized content",
+      "weight": 0.2
+    }
+  },
+  "metrics": {
+    "primary": "customization_score",
+    "secondary": ["personalization_depth", "requirement_fulfillment"]
+  }
+}

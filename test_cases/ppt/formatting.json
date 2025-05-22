@@ -1,0 +1,52 @@
+
+{
+  "name": "PowerPoint Formatting",
+  "description": "Tests the model's ability to apply proper PowerPoint-specific formatting to presentations",
+  "category": "ppt",
+  "prompts": [
+    {
+      "id": "slide_master_formatting",
+      "text": "Create a corporate presentation with consistent formatting based on a slide master approach. Describe how the slide master should be set up with primary and secondary colors, font choices for headings and body text, consistent footer elements, and logo placement. Then create sample slides that follow this master formatting, including a title slide, section divider, content slide with bullets, and a data slide.",
+      "expected_elements": [
+        "Slide master specifications",
+        "Consistent theme color usage",
+        "Typography specifications for slide elements",
+        "Consistent footer and logo placement",
+        "Sample slides following master formatting"
+      ]
+    },
+    {
+      "id": "object_formatting",
+      "text": "Create a presentation with properly formatted PowerPoint objects. Include slides with: 1) Properly formatted text boxes with appropriate margins and alignment, 2) Shapes with consistent fill, outline, and effects, 3) A properly formatted chart with labeled elements and consistent colors, 4) An image with appropriate cropping, borders, and effects, and 5) Properly aligned and distributed multiple objects on a single slide.",
+      "expected_elements": [
+        "Text box formatting specifications",
+        "Consistent shape formatting",
+        "Proper chart formatting and labeling",
+        "Image formatting techniques",
+        "Object alignment and distribution guidelines"
+      ]
+    }
+  ],
+  "evaluation_criteria": {
+    "consistency": {
+      "description": "Consistency of formatting throughout",
+      "weight": 0.3
+    },
+    "ppt_specific_formatting": {
+      "description": "Use of PowerPoint-specific formatting features",
+      "weight": 0.25
+    },
+    "object_formatting": {
+      "description": "Proper formatting of different object types",
+      "weight": 0.25
+    },
+    "design_principles": {
+      "description": "Application of design principles in formatting",
+      "weight": 0.2
+    }
+  },
+  "metrics": {
+    "primary": "formatting_score",
+    "secondary": ["consistency_rating", "technical_formatting_quality"]
+  }
+}

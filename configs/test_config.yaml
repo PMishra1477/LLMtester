@@ -1,0 +1,108 @@
+# configs/test_config.yaml - Updated with all models
+version: 1.0
+
+# Model configuration directory
+model_config_dir: "configs/models"
+test_cases_dir: "test_cases"
+
+# All models from your configuration files - CORRECTED NAMES
+selected_models:
+  # OpenAI models - CORRECTED
+  - gpt_4o
+  - gpt_4_turbo
+  - gpt_4
+  - o1_preview
+  - o1_mini  # Changed from o1_pro
+  - gpt_3_5_turbo  # Added working model
+  
+  # Anthropic models
+  - claude_3_opus
+  - claude_3_5_sonnet
+  - claude_3_5_haiku
+  - claude_3_7_sonnet
+  
+  # Google models
+  - gemini_2_5_pro_preview_05_06
+  - gemini_2_5_pro_preview_03_25
+  - gemini_2_5_pro_exp_03_25
+  - gemini_2_5_flash_preview_04_17
+  - gemini_2_5_flash_preview_04_17_thinking
+  - gemini_2_0_pro_exp
+  - gemini_2_0_flash
+  - gemini_2_0_flash_thinking_exp
+  - gemini_1_5_pro
+  - gemini_1_5_flash
+  
+  # Mistral models
+  - mistral_small
+  - mistral_medium
+  - mistral_large
+  
+  # Cohere models
+  - command_a_03_2025
+  - command_r_plus_08_2024
+  - command_r_plus_04_2024
+  - command_r_plus
+  - command_r_08_2024_v004
+  - command_r_08_2024_v003
+  - command_r_03_2024
+  - command_r
+
+# Test categories
+categories:
+  - ppt
+  - content
+  - creativity
+  - efficiency
+  - formatting
+  - consistency
+  - personalization
+
+# Test execution settings
+parallel_execution: false
+retry_count: 1  # Reduced for faster testing
+timeout: 120  # Reduced timeout
+
+# Evaluation metrics
+evaluation:
+  score_weights:
+    ppt:
+      relevance: 0.2
+      slide_structure: 0.2
+      visual_elements: 0.15
+      slide_transitions: 0.1
+      formatting_consistency: 0.15
+      content_organization: 0.2
+    content:
+      accuracy: 0.25
+      comprehensiveness: 0.2
+      relevance: 0.2
+      depth: 0.15
+      clarity: 0.2
+    creativity:
+      novelty: 0.3
+      uniqueness: 0.3
+      adaptability: 0.2
+      innovation: 0.2
+    efficiency:
+      token_usage: 0.4
+      instruction_following: 0.3
+      completeness: 0.3
+    formatting:
+      markdown_correctness: 0.4
+      table_formatting: 0.3
+      list_formatting: 0.3
+    consistency:
+      style_consistency: 0.4
+      tone_consistency: 0.3
+      branding_consistency: 0.3
+    personalization:
+      audience_targeting: 0.4
+      industry_adaptation: 0.3
+      customization: 0.3
+
+# Reporting configuration
+reporting:
+  generate_charts: true
+  include_detailed_metrics: true
+  highlight_top_performers: true

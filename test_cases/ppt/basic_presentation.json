@@ -1,0 +1,54 @@
+
+{
+  "name": "Basic Presentation Structure",
+  "description": "Tests the model's ability to create well-structured basic presentations with essential PowerPoint elements",
+  "category": "ppt",
+  "prompts": [
+    {
+      "id": "standard_business_presentation",
+      "text": "Create a basic business presentation about a company's annual performance. Include a proper title slide, agenda slide, content slides with appropriate headings and bullet points, a data slide with a simple chart, and a closing slide with next steps. Ensure the presentation follows standard PowerPoint best practices for a basic business presentation.",
+      "expected_elements": [
+        "Properly formatted title slide",
+        "Clear agenda/outline slide",
+        "Consistent heading structure",
+        "Appropriate bullet point usage",
+        "Basic chart or graph",
+        "Effective closing slide"
+      ]
+    },
+    {
+      "id": "informational_presentation",
+      "text": "Create a basic informational presentation about climate change for a general audience. Structure the presentation with a compelling title slide, an overview slide, 4-5 content slides covering key aspects of the topic, at least one visual element (chart, diagram, or image description), and a resources/references slide. Follow standard PowerPoint best practices for educational presentations.",
+      "expected_elements": [
+        "Engaging title slide",
+        "Clear overview/introduction",
+        "Logical topic progression",
+        "Appropriate visual element integration",
+        "Proper citation/reference slide",
+        "Consistent basic formatting"
+      ]
+    }
+  ],
+  "evaluation_criteria": {
+    "structure_appropriateness": {
+      "description": "Appropriate basic presentation structure",
+      "weight": 0.3
+    },
+    "slide_variety": {
+      "description": "Appropriate variety of slide types",
+      "weight": 0.25
+    },
+    "navigation_clarity": {
+      "description": "Clear navigation and flow between slides",
+      "weight": 0.25
+    },
+    "ppt_best_practices": {
+      "description": "Adherence to PowerPoint best practices",
+      "weight": 0.2
+    }
+  },
+  "metrics": {
+    "primary": "basic_structure_score",
+    "secondary": ["slide_quality", "presentation_coherence"]
+  }
+}

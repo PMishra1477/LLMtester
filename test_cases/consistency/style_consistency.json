@@ -1,0 +1,52 @@
+
+{
+  "name": "Style Consistency",
+  "description": "Tests the model's ability to maintain consistent visual and formatting styles throughout a presentation",
+  "category": "consistency",
+  "prompts": [
+    {
+      "id": "formatting_consistency",
+      "text": "Create a 6-slide presentation about renewable energy sources. Use a consistent layout with titles at the top of each slide in 24pt font, body text in 18pt font, and bullet points for lists. Use the same transition effect between all slides. Maintain consistent spacing and margins throughout the presentation.",
+      "expected_elements": [
+        "Consistent title placement and font size",
+        "Consistent body text formatting",
+        "Uniform bullet point styling",
+        "Consistent transitions",
+        "Uniform spacing and margins"
+      ]
+    },
+    {
+      "id": "visual_theme_consistency",
+      "text": "Create a presentation about ocean conservation with a consistent underwater theme. Each slide should have a blue gradient background, use white text for readability, include at least one ocean-related image per slide, and use wave-like design elements to separate content sections. Maintain this visual theme consistently across all slides.",
+      "expected_elements": [
+        "Consistent background design",
+        "Uniform text color and styling",
+        "Thematic imagery on each slide",
+        "Consistent design elements",
+        "Overall visual cohesion"
+      ]
+    }
+  ],
+  "evaluation_criteria": {
+    "layout_consistency": {
+      "description": "Consistent layout structure across slides",
+      "weight": 0.25
+    },
+    "typography_consistency": {
+      "description": "Consistent use of fonts, sizes, and text styling",
+      "weight": 0.25
+    },
+    "visual_element_consistency": {
+      "description": "Consistent use of visual elements (colors, images, shapes)",
+      "weight": 0.25
+    },
+    "spacing_consistency": {
+      "description": "Consistent spacing, margins, and alignment",
+      "weight": 0.25
+    }
+  },
+  "metrics": {
+    "primary": "style_consistency_score",
+    "secondary": ["visual_cohesion", "formatting_uniformity"]
+  }
+}

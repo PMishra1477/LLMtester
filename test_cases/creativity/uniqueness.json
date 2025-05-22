@@ -1,0 +1,50 @@
+
+{
+  "name": "Content Uniqueness",
+  "description": "Tests the model's ability to generate unique presentation content that stands out from standard approaches",
+  "category": "creativity",
+  "prompts": [
+    {
+      "id": "unique_sales_pitch",
+      "text": "Create a unique sales presentation for a standard office productivity software suite. The market is saturated with similar products, so your presentation needs to stand out with a distinctive approach, unusual value propositions, or unexpected positioning. Avoid clichés and standard sales presentation formats.",
+      "expected_elements": [
+        "Distinctive positioning strategy",
+        "Unique selling propositions",
+        "Unconventional presentation structure",
+        "Fresh approach to a common product category"
+      ]
+    },
+    {
+      "id": "distinctive_visual_concept",
+      "text": "Create a presentation about team building with a unique visual concept. Instead of the usual corporate imagery and standard metaphors (puzzles, buildings, bridges), develop a completely fresh visual theme that will make this presentation memorable and distinctive. Describe the visual approach in detail.",
+      "expected_elements": [
+        "Unique visual theme or concept",
+        "Fresh metaphors or imagery",
+        "Distinctive aesthetic approach",
+        "Memorable visual elements"
+      ]
+    }
+  ],
+  "evaluation_criteria": {
+    "distinctiveness": {
+      "description": "Distinctiveness from standard approaches",
+      "weight": 0.3
+    },
+    "cliché_avoidance": {
+      "description": "Avoidance of common clichés and tropes",
+      "weight": 0.25
+    },
+    "memorability": {
+      "description": "Potential for the content to be memorable",
+      "weight": 0.25
+    },
+    "fresh_perspective": {
+      "description": "Freshness of perspective and approach",
+      "weight": 0.2
+    }
+  },
+  "metrics": {
+    "primary": "uniqueness_score",
+    "secondary": ["distinctiveness_rating", "cliché_avoidance_rate"]
+  }
+}

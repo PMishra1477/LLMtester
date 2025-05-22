@@ -1,0 +1,52 @@
+
+{
+  "name": "Content Relevance",
+  "description": "Tests the model's ability to create presentation content that is relevant to the specified topic, purpose, and audience",
+  "category": "content",
+  "prompts": [
+    {
+      "id": "investor_pitch",
+      "text": "Create a presentation for potential investors about our AI-powered healthcare diagnostic tool. The audience consists of venture capitalists with limited technical knowledge but strong business acumen. Focus on market opportunity, competitive advantage, business model, traction to date, and financial projections. The goal is to secure Series A funding.",
+      "expected_elements": [
+        "Business-focused rather than technically detailed",
+        "Clear value proposition for investors",
+        "Relevant market size and opportunity data",
+        "Appropriate financial metrics",
+        "Information aligned with Series A funding goals"
+      ]
+    },
+    {
+      "id": "educational_relevance",
+      "text": "Create a presentation about marine biology for a high school science class. The content should align with typical high school curriculum standards, be engaging for teenagers, and focus on concepts they're likely to be tested on, including ocean ecosystems, marine food chains, adaptation, and human impact on oceans.",
+      "expected_elements": [
+        "Age-appropriate content",
+        "Curriculum-relevant information",
+        "Engaging examples for teenage audience",
+        "Focus on testable concepts",
+        "Relevant to educational objectives"
+      ]
+    }
+  ],
+  "evaluation_criteria": {
+    "audience_alignment": {
+      "description": "Relevance to the specified audience's needs and knowledge level",
+      "weight": 0.3
+    },
+    "purpose_alignment": {
+      "description": "Alignment with the stated purpose or goal",
+      "weight": 0.3
+    },
+    "topic_focus": {
+      "description": "Focus on relevant aspects of the topic",
+      "weight": 0.2
+    },
+    "contextual_appropriateness": {
+      "description": "Appropriateness for the implied context",
+      "weight": 0.2
+    }
+  },
+  "metrics": {
+    "primary": "relevance_score",
+    "secondary": ["audience_fit", "purpose_alignment"]
+  }
+}

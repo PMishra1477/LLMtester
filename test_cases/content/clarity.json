@@ -1,0 +1,50 @@
+
+{
+  "name": "Content Clarity",
+  "description": "Tests the model's ability to create clear, understandable presentation content",
+  "category": "content",
+  "prompts": [
+    {
+      "id": "technical_simplification",
+      "text": "Create a presentation explaining how blockchain technology works to non-technical business executives. Make complex concepts clear and understandable without oversimplifying. Use appropriate analogies and visual descriptions to enhance clarity.",
+      "expected_elements": [
+        "Clear explanations of blockchain fundamentals",
+        "Appropriate analogies for technical concepts",
+        "Logical flow of information",
+        "Avoidance of unnecessary jargon"
+      ]
+    },
+    {
+      "id": "process_explanation",
+      "text": "Create a presentation explaining the process of photosynthesis for a middle school science class. Ensure the content is clear, age-appropriate, and builds concepts in a logical sequence. Use simple language while maintaining scientific accuracy.",
+      "expected_elements": [
+        "Clear step-by-step explanation",
+        "Age-appropriate language",
+        "Logical concept building",
+        "Clear cause-and-effect relationships"
+      ]
+    }
+  ],
+  "evaluation_criteria": {
+    "concept_clarity": {
+      "description": "Clear explanation of concepts and ideas",
+      "weight": 0.3
+    },
+    "language_accessibility": {
+      "description": "Use of accessible, appropriate language",
+      "weight": 0.25
+    },
+    "logical_flow": {
+      "description": "Logical progression and organization of information",
+      "weight": 0.25
+    },
+    "jargon_management": {
+      "description": "Appropriate use or explanation of technical terms",
+      "weight": 0.2
+    }
+  },
+  "metrics": {
+    "primary": "clarity_score",
+    "secondary": ["readability", "concept_accessibility"]
+  }
+}

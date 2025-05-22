@@ -1,0 +1,50 @@
+
+{
+  "name": "Content Novelty",
+  "description": "Tests the model's ability to generate novel and unexpected content and approaches in presentations",
+  "category": "creativity",
+  "prompts": [
+    {
+      "id": "unexpected_connections",
+      "text": "Create a presentation that draws unexpected connections between artificial intelligence and ancient philosophy. Explore novel parallels, surprising historical precedents, and thought-provoking comparisons that audience members would not have considered before. The presentation should challenge conventional thinking about both AI and philosophy.",
+      "expected_elements": [
+        "Surprising connections between disparate domains",
+        "Novel historical parallels",
+        "Unexpected conceptual frameworks",
+        "Thought-provoking new perspectives"
+      ]
+    },
+    {
+      "id": "novel_framing",
+      "text": "Create a presentation about climate change that frames the issue in a completely novel way that might change how people think about it. Avoid the standard apocalyptic or purely scientific framings. Develop a fresh perspective that could break through audience fatigue on this topic.",
+      "expected_elements": [
+        "Unconventional framing of a familiar topic",
+        "Novel perspective that challenges assumptions",
+        "Fresh approach to a well-covered subject",
+        "Unexpected entry points to the topic"
+      ]
+    }
+  ],
+  "evaluation_criteria": {
+    "unexpectedness": {
+      "description": "Degree of surprise and unexpectedness",
+      "weight": 0.3
+    },
+    "perspective_novelty": {
+      "description": "Novelty of viewpoints and perspectives",
+      "weight": 0.3
+    },
+    "conceptual_recombination": {
+      "description": "Novel combinations of existing concepts",
+      "weight": 0.2
+    },
+    "assumption_challenging": {
+      "description": "Ability to challenge conventional assumptions",
+      "weight": 0.2
+    }
+  },
+  "metrics": {
+    "primary": "novelty_score",
+    "secondary": ["surprise_factor", "perspective_originality"]
+  }
+}

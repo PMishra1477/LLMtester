@@ -1,0 +1,58 @@
+# configs/models/mistral.yaml - FIXED STRUCTURE
+models:
+  mistral_small:
+    display_name: "Mistral Small"
+    version: "mistral-small-latest"
+    api_key_env: "MISTRAL_API_KEY"
+    max_tokens: 32768
+    context_window: 32768
+    strengths:
+      - "Efficiency"
+      - "Cost effectiveness"
+      - "Speed"
+    defaults:
+      temperature: 0.7
+      top_p: 0.9
+      max_tokens: 4096
+    cost:
+      input_per_1k: 0.2
+      output_per_1k: 0.6
+    provider: "mistral"
+
+  mistral_medium:
+    display_name: "Mistral Medium"
+    version: "mistral-medium-latest"
+    api_key_env: "MISTRAL_API_KEY"
+    max_tokens: 32768
+    context_window: 32768
+    strengths:
+      - "Balance of quality and cost"
+      - "Good reasoning capabilities"
+      - "Reliable factual knowledge"
+    defaults:
+      temperature: 0.7
+      top_p: 0.9
+      max_tokens: 4096
+    cost:
+      input_per_1k: 2.7
+      output_per_1k: 8.1
+    provider: "mistral"
+
+  mistral_large:
+    display_name: "Mistral Large"
+    version: "mistral-large-latest"
+    api_key_env: "MISTRAL_API_KEY"
+    max_tokens: 32768
+    context_window: 32768
+    strengths:
+      - "Top-tier performance"
+      - "Advanced reasoning"
+      - "Strong factual accuracy"
+    defaults:
+      temperature: 0.7
+      top_p: 0.9
+      max_tokens: 4096
+    cost:
+      input_per_1k: 8.0
+      output_per_1k: 24.0
+    provider: "mistral"

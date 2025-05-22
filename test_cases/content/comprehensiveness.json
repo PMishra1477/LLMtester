@@ -1,0 +1,56 @@
+
+{
+  "name": "Content Comprehensiveness",
+  "description": "Tests the model's ability to create comprehensive presentation content covering all relevant aspects of a topic",
+  "category": "content",
+  "prompts": [
+    {
+      "id": "business_plan",
+      "text": "Create a comprehensive business plan presentation for a new mobile app startup. Include sections on market analysis, product description, competitive landscape, marketing strategy, financial projections, and implementation timeline. Ensure all key aspects of a business plan are addressed.",
+      "expected_elements": [
+        "Executive summary",
+        "Market analysis with target audience",
+        "Product description and features",
+        "Competitive analysis",
+        "Marketing strategy",
+        "Financial projections",
+        "Implementation timeline",
+        "Risk assessment"
+      ]
+    },
+    {
+      "id": "research_overview",
+      "text": "Create a comprehensive presentation summarizing research on renewable energy technologies. Cover solar, wind, hydroelectric, geothermal, and biomass energy. For each technology, include how it works, current adoption, advantages, limitations, and future outlook.",
+      "expected_elements": [
+        "Overview of all major renewable technologies",
+        "Technical explanations for each type",
+        "Current market adoption data",
+        "Advantages and limitations",
+        "Future outlook and trends",
+        "Comparative analysis"
+      ]
+    }
+  ],
+  "evaluation_criteria": {
+    "topic_coverage": {
+      "description": "Coverage of all relevant aspects of the topic",
+      "weight": 0.3
+    },
+    "depth_breadth_balance": {
+      "description": "Appropriate balance between depth and breadth",
+      "weight": 0.25
+    },
+    "key_element_inclusion": {
+      "description": "Inclusion of all key elements expected in the domain",
+      "weight": 0.25
+    },
+    "perspective_completeness": {
+      "description": "Inclusion of multiple relevant perspectives",
+      "weight": 0.2
+    }
+  },
+  "metrics": {
+    "primary": "comprehensiveness_score",
+    "secondary": ["coverage_breadth", "element_inclusion_rate"]
+  }
+}

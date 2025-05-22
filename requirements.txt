@@ -1,0 +1,29 @@
+# Core dependencies
+pyyaml
+python-dotenv
+tqdm
+pandas
+matplotlib
+seaborn
+tabulate
+
+# Model API clients
+openai
+anthropic
+google-generativeai
+mistralai
+cohere
+
+# Metrics and evaluation
+nltk
+rouge
+scipy
+scikit-learn
+
+# Utilities
+requests
+tiktoken
+tenacity
+python-pptx
+jupyter
+plotly

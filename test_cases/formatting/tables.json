@@ -1,0 +1,54 @@
+
+{
+  "name": "Table Formatting",
+  "description": "Tests the model's ability to create and format tables effectively in presentations",
+  "category": "formatting",
+  "prompts": [
+    {
+      "id": "data_comparison_table",
+      "text": "Create a presentation comparing three competing products. Include a well-formatted comparison table with at least 5 features/criteria as rows and the three products as columns. The table should have clear headers, consistent column widths, proper alignment (text left-aligned, numbers right-aligned), and visual separation between rows. Use appropriate formatting to highlight the winning product for each criterion.",
+      "expected_elements": [
+        "Clear table headers",
+        "Consistent column widths",
+        "Proper content alignment",
+        "Visual row separation",
+        "Appropriate highlighting of key data",
+        "Logical organization of comparison criteria"
+      ]
+    },
+    {
+      "id": "complex_data_table",
+      "text": "Create a presentation about quarterly financial results. Include a complex data table showing revenue, expenses, and profit margins across 4 quarters, with year-over-year comparison. The table should include proper formatting for currency values, percentages, proper header structure with merged cells for categories, and appropriate use of borders and shading to improve readability.",
+      "expected_elements": [
+        "Proper currency and percentage formatting",
+        "Effective use of merged cells for headers",
+        "Appropriate borders and shading",
+        "Logical data organization",
+        "Consistent number formatting",
+        "Visual hierarchy within the table"
+      ]
+    }
+  ],
+  "evaluation_criteria": {
+    "structure_clarity": {
+      "description": "Clarity and effectiveness of table structure",
+      "weight": 0.25
+    },
+    "data_formatting": {
+      "description": "Proper formatting of data types (text, numbers, etc.)",
+      "weight": 0.25
+    },
+    "visual_organization": {
+      "description": "Visual organization and readability",
+      "weight": 0.25
+    },
+    "content_alignment": {
+      "description": "Appropriate alignment of different content types",
+      "weight": 0.25
+    }
+  },
+  "metrics": {
+    "primary": "table_formatting_score",
+    "secondary": ["readability_rating", "data_presentation_quality"]
+  }
+}

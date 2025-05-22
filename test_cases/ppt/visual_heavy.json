@@ -1,0 +1,52 @@
+
+{
+  "name": "Visual-Heavy Presentations",
+  "description": "Tests the model's ability to create presentations that effectively use visual elements as the primary content",
+  "category": "ppt",
+  "prompts": [
+    {
+      "id": "image_driven_presentation",
+      "text": "Create an image-driven presentation about travel destinations. The presentation should use large, impactful images as the primary content with minimal text. Describe the specific image composition needed for each slide, how text should be overlaid for maximum readability, and how to maintain visual flow between image-heavy slides. Include guidance for image selection, placement, and treatment.",
+      "expected_elements": [
+        "Large image placement specifications",
+        "Text overlay techniques for readability",
+        "Visual flow between image slides",
+        "Image selection and treatment guidance",
+        "Minimal but effective text usage"
+      ]
+    },
+    {
+      "id": "data_visualization_presentation",
+      "text": "Create a data-focused presentation about market trends that relies primarily on visualizations rather than text. Each slide should feature a different type of data visualization (chart, graph, diagram, etc.) as its focal point. Provide detailed specifications for each visualization, including chart types, color usage, data labeling, and how to ensure the visualizations effectively communicate the key points with minimal supporting text.",
+      "expected_elements": [
+        "Varied visualization type specifications",
+        "Data representation best practices",
+        "Minimal text support for visualizations",
+        "Color and labeling guidelines",
+        "Visual hierarchy within data presentations"
+      ]
+    }
+  ],
+  "evaluation_criteria": {
+    "visual_primacy": {
+      "description": "Effective use of visuals as primary content",
+      "weight": 0.3
+    },
+    "visual_variety": {
+      "description": "Appropriate variety of visual approaches",
+      "weight": 0.25
+    },
+    "text_integration": {
+      "description": "Effective integration of necessary text",
+      "weight": 0.25
+    },
+    "visual_communication": {
+      "description": "Communication effectiveness through visuals",
+      "weight": 0.2
+    }
+  },
+  "metrics": {
+    "primary": "visual_presentation_score",
+    "secondary": ["visual_impact", "communication_effectiveness"]
+  }
+}

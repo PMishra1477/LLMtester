@@ -1,0 +1,52 @@
+
+{
+  "name": "Markdown Formatting",
+  "description": "Tests the model's ability to properly use and format markdown elements in presentation content",
+  "category": "formatting",
+  "prompts": [
+    {
+      "id": "markdown_elements",
+      "text": "Create a presentation about data analysis using proper markdown formatting. Include headings of different levels (H1, H2, H3), emphasis (bold and italic text), code blocks for showing example code, and properly formatted links to resources. Ensure markdown syntax is correctly applied throughout.",
+      "expected_elements": [
+        "Properly formatted headings of multiple levels",
+        "Correct use of bold and italic emphasis",
+        "Properly formatted code blocks",
+        "Correctly formatted links",
+        "Consistent markdown syntax"
+      ]
+    },
+    {
+      "id": "markdown_advanced",
+      "text": "Create a technical documentation presentation using advanced markdown features. Include a table of contents with internal links, properly formatted tables, blockquotes for important notes, horizontal rules to separate sections, and inline code references. Ensure all markdown syntax is correctly implemented.",
+      "expected_elements": [
+        "Functional table of contents with internal links",
+        "Properly formatted tables in markdown",
+        "Correct blockquote formatting",
+        "Appropriate use of horizontal rules",
+        "Properly formatted inline code"
+      ]
+    }
+  ],
+  "evaluation_criteria": {
+    "syntax_accuracy": {
+      "description": "Accuracy of markdown syntax implementation",
+      "weight": 0.3
+    },
+    "element_variety": {
+      "description": "Appropriate use of various markdown elements",
+      "weight": 0.25
+    },
+    "formatting_consistency": {
+      "description": "Consistent application of markdown formatting",
+      "weight": 0.25
+    },
+    "readability_enhancement": {
+      "description": "Enhancement of readability through markdown",
+      "weight": 0.2
+    }
+  },
+  "metrics": {
+    "primary": "markdown_formatting_score",
+    "secondary": ["syntax_accuracy_rate", "element_implementation_quality"]
+  }
+}

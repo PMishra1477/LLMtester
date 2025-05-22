@@ -1,0 +1,53 @@
+
+{
+  "name": "Content Depth",
+  "description": "Tests the model's ability to create presentation content with appropriate depth and detail",
+  "category": "content",
+  "prompts": [
+    {
+      "id": "technical_depth",
+      "text": "Create a presentation on quantum computing for a graduate-level physics seminar. The presentation should go beyond basics and include detailed explanations of quantum bits, quantum gates, quantum entanglement, quantum algorithms (specifically Shor's and Grover's algorithms), and current challenges in quantum computing development.",
+      "expected_elements": [
+        "Detailed quantum mechanics principles",
+        "Mathematical representations where appropriate",
+        "In-depth explanation of quantum algorithms",
+        "Nuanced discussion of technical challenges",
+        "Current research directions"
+      ]
+    },
+    {
+      "id": "market_analysis_depth",
+      "text": "Create a presentation providing an in-depth analysis of the electric vehicle market for automotive industry executives. Include detailed market segmentation, growth projections by region, battery technology developments, competitive landscape analysis, regulatory impacts, and consumer adoption barriers.",
+      "expected_elements": [
+        "Granular market segmentation",
+        "Region-specific data and trends",
+        "Technical details on battery advancements",
+        "Detailed competitive positioning",
+        "Specific regulatory considerations",
+        "Nuanced consumer behavior analysis"
+      ]
+    }
+  ],
+  "evaluation_criteria": {
+    "detail_level": {
+      "description": "Appropriate level of detail for the topic and audience",
+      "weight": 0.3
+    },
+    "concept_exploration": {
+      "description": "Thorough exploration of concepts beyond surface level",
+      "weight": 0.3
+    },
+    "nuance_recognition": {
+      "description": "Recognition and explanation of nuances and complexities",
+      "weight": 0.2
+    },
+    "supporting_evidence": {
+      "description": "Inclusion of specific supporting details and evidence",
+      "weight": 0.2
+    }
+  },
+  "metrics": {
+    "primary": "depth_score",
+    "secondary": ["detail_density", "concept_thoroughness"]
+  }
+}

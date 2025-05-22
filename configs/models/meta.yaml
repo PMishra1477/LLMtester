@@ -1,0 +1,75 @@
+
+# # Meta Models Configuration
+
+# models:
+#   - name: llama_3_70b
+#     display_name: "Llama 3 70B"
+#     version: "meta-llama/Llama-3-70b-instruct"
+#     api_key_env: "META_API_KEY"
+#     max_tokens: 8192
+#     context_window: 8192
+#     strengths:
+#       - "Open-source backing"
+#       - "Large parameter count"
+#       - "Strong reasoning"
+#     defaults:
+#       temperature: 0.7
+#       top_p: 0.9
+#       max_tokens: 2048
+#     cost:
+#       input_per_1k: 1.0
+#       output_per_1k: 3.0
+
+#   - name: llama_3_8b
+#     display_name: "Llama 3 8B"
+#     version: "meta-llama/Llama-3-8b-instruct"
+#     api_key_env: "META_API_KEY"
+#     max_tokens: 8192
+#     context_window: 8192
+#     strengths:
+#       - "Efficiency"
+#       - "Speed"
+#       - "Cost effectiveness"
+#     defaults:
+#       temperature: 0.7
+#       top_p: 0.9
+#       max_tokens: 2048
+#     cost:
+#       input_per_1k: 0.2
+#       output_per_1k: 0.6
+
+#   - name: llama_3_1
+#     display_name: "Llama 3.1"
+#     version: "meta-llama/Llama-3.1-70b-instruct"
+#     api_key_env: "META_API_KEY"
+#     max_tokens: 32768
+#     context_window: 32768
+#     strengths:
+#       - "Extended context window"
+#       - "Improved instruction following"
+#       - "Enhanced reasoning"
+#     defaults:
+#       temperature: 0.7
+#       top_p: 0.9
+#       max_tokens: 4096
+#     cost:
+#       input_per_1k: 1.5
+#       output_per_1k: 4.5
+
+#   - name: llama_4
+#     display_name: "Llama 4"
+#     version: "meta-llama/Llama-4"
+#     api_key_env: "META_API_KEY"
+#     max_tokens: 128000
+#     context_window: 128000
+#     strengths:
+#       - "Next-generation capabilities"
+#       - "Major architectural improvements"
+#       - "Expanded context window"
+#     defaults:
+#       temperature: 0.7
+#       top_p: 0.9
+#       max_tokens: 4096
+#     cost:
+#       input_per_1k: 2.0
+#       output_per_1k: 6.0

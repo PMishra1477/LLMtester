@@ -1,0 +1,50 @@
+
+{
+  "name": "Tone Consistency",
+  "description": "Tests the model's ability to maintain a consistent tone and voice throughout a presentation",
+  "category": "consistency",
+  "prompts": [
+    {
+      "id": "formal_tone",
+      "text": "Create a presentation for a board meeting about quarterly financial results. Maintain a formal, professional tone throughout all slides. The presentation should include an executive summary, key performance indicators, revenue breakdown, expense analysis, and future projections.",
+      "expected_elements": [
+        "Formal language throughout",
+        "Professional terminology",
+        "Consistent level of formality",
+        "Appropriate business language"
+      ]
+    },
+    {
+      "id": "casual_educational",
+      "text": "Create a presentation for middle school students about the solar system. Use a friendly, engaging, and educational tone throughout. Make complex concepts accessible without being condescending. Include fun facts on each slide to maintain student interest.",
+      "expected_elements": [
+        "Consistent casual but educational tone",
+        "Age-appropriate language",
+        "Engaging presentation style",
+        "Consistent level of complexity"
+      ]
+    }
+  ],
+  "evaluation_criteria": {
+    "voice_consistency": {
+      "description": "Consistent narrative voice throughout",
+      "weight": 0.3
+    },
+    "formality_consistency": {
+      "description": "Consistent level of formality",
+      "weight": 0.3
+    },
+    "terminology_consistency": {
+      "description": "Consistent use of terminology and vocabulary",
+      "weight": 0.2
+    },
+    "audience_appropriateness": {
+      "description": "Consistent appropriateness for the target audience",
+      "weight": 0.2
+    }
+  },
+  "metrics": {
+    "primary": "tone_consistency_score",
+    "secondary": ["audience_alignment", "voice_stability"]
+  }
+}

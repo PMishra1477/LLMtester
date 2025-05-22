@@ -1,0 +1,62 @@
+
+{
+  "name": "Content Accuracy",
+  "description": "Tests the model's ability to generate factually accurate content in presentations",
+  "category": "content",
+  "prompts": [
+    {
+      "id": "historical_facts",
+      "text": "Create a presentation about the Apollo space program. Include key dates, mission details, astronaut names, and technological achievements. The presentation should be factually accurate and include at least 5 slides covering the program from its inception to the final Apollo mission.",
+      "expected_elements": [
+        "Correct dates for key Apollo missions",
+        "Accurate astronaut names",
+        "Factual mission details",
+        "Correct technological information"
+      ],
+      "reference_facts": {
+        "Apollo program years": "1961-1972",
+        "First lunar landing": "Apollo 11, July 20, 1969",
+        "Apollo 11 astronauts": "Neil Armstrong, Buzz Aldrin, Michael Collins",
+        "Final mission": "Apollo 17, December 1972"
+      }
+    },
+    {
+      "id": "scientific_accuracy",
+      "text": "Create a presentation explaining climate change for a high school audience. Include data on global temperature trends, causes of climate change, major effects, and potential solutions. Ensure all scientific information is accurate and up-to-date.",
+      "expected_elements": [
+        "Accurate temperature data",
+        "Correct explanation of greenhouse effect",
+        "Factual information about climate impacts",
+        "Scientifically sound solutions"
+      ],
+      "reference_facts": {
+        "Primary greenhouse gas": "Carbon dioxide (CO2)",
+        "Global warming since pre-industrial": "Approximately 1.1°C",
+        "Major cause": "Human activities, primarily fossil fuel burning",
+        "IPCC": "Intergovernmental Panel on Climate Change"
+      }
+    }
+  ],
+  "evaluation_criteria": {
+    "factual_correctness": {
+      "description": "Accuracy of facts, dates, names, and figures",
+      "weight": 0.4
+    },
+    "scientific_validity": {
+      "description": "Adherence to scientific consensus and principles",
+      "weight": 0.3
+    },
+    "source_reliability": {
+      "description": "Implied use of reliable information sources",
+      "weight": 0.2
+    },
+    "misconception_avoidance": {
+      "description": "Avoidance of common misconceptions or myths",
+      "weight": 0.1
+    }
+  },
+  "metrics": {
+    "primary": "accuracy_score",
+    "secondary": ["factual_density", "error_rate"]
+  }
+}

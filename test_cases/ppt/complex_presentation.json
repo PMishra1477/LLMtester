@@ -1,0 +1,54 @@
+
+{
+  "name": "Complex Presentation Features",
+  "description": "Tests the model's ability to create presentations with advanced PowerPoint features and complex structures",
+  "category": "ppt",
+  "prompts": [
+    {
+      "id": "multi_section_presentation",
+      "text": "Create a complex quarterly business review presentation with multiple distinct sections. The presentation should include: 1) An executive summary section with a dashboard slide, 2) A financial section with multiple data visualizations, 3) A departmental performance section with subsections for each department, 4) A future outlook section with scenario planning, and 5) An appendix with detailed supporting data. Include section divider slides and a master table of contents with hyperlinks to each section.",
+      "expected_elements": [
+        "Effective section divider slides",
+        "Master table of contents with sections",
+        "Complex dashboard design",
+        "Multiple data visualization types",
+        "Hierarchical information structure",
+        "Proper appendix organization"
+      ]
+    },
+    {
+      "id": "advanced_features_presentation",
+      "text": "Create a product launch presentation that incorporates advanced PowerPoint features. Include slides with: 1) A SmartArt process diagram, 2) A comparison table with conditional formatting, 3) A slide with animated build sequence suggestions for key points, 4) A slide with picture placeholders and formatting, 5) Custom slide layouts for different content types, and 6) Speaker notes with timing guidelines. Describe how each advanced feature should be implemented.",
+      "expected_elements": [
+        "SmartArt diagram specifications",
+        "Conditional formatting in tables",
+        "Animation sequence recommendations",
+        "Image placeholder formatting",
+        "Custom layout descriptions",
+        "Detailed speaker notes with timing"
+      ]
+    }
+  ],
+  "evaluation_criteria": {
+    "feature_utilization": {
+      "description": "Appropriate use of advanced PowerPoint features",
+      "weight": 0.3
+    },
+    "structural_complexity": {
+      "description": "Effective handling of complex structures",
+      "weight": 0.25
+    },
+    "navigation_design": {
+      "description": "Design of navigation in complex presentations",
+      "weight": 0.25
+    },
+    "advanced_element_integration": {
+      "description": "Integration of advanced elements and features",
+      "weight": 0.2
+    }
+  },
+  "metrics": {
+    "primary": "complex_presentation_score",
+    "secondary": ["feature_implementation_quality", "structural_effectiveness"]
+  }
+}

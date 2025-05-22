@@ -1,0 +1,50 @@
+
+{
+  "name": "Presentation Innovation",
+  "description": "Tests the model's ability to generate innovative presentation approaches and ideas",
+  "category": "creativity",
+  "prompts": [
+    {
+      "id": "format_innovation",
+      "text": "Create an innovative presentation about the future of work that breaks away from traditional slide formats. Suggest a novel presentation structure, unique visual approach, and creative ways to engage the audience throughout. The presentation should feel fresh and different from standard corporate presentations.",
+      "expected_elements": [
+        "Non-traditional presentation structure",
+        "Innovative visual concepts",
+        "Creative audience engagement ideas",
+        "Novel approach to information delivery"
+      ]
+    },
+    {
+      "id": "concept_innovation",
+      "text": "Create a presentation explaining complex data privacy concepts to the general public. Use innovative analogies, metaphors, or storytelling approaches that make these abstract concepts tangible and memorable. The goal is to help people understand data privacy in ways they've never considered before.",
+      "expected_elements": [
+        "Original analogies or metaphors",
+        "Innovative conceptual frameworks",
+        "Creative storytelling approaches",
+        "Novel ways of explaining technical concepts"
+      ]
+    }
+  ],
+  "evaluation_criteria": {
+    "originality": {
+      "description": "Originality and novelty of ideas and approaches",
+      "weight": 0.3
+    },
+    "convention_breaking": {
+      "description": "Willingness to break from conventional approaches",
+      "weight": 0.25
+    },
+    "creative_problem_solving": {
+      "description": "Innovative solutions to presentation challenges",
+      "weight": 0.25
+    },
+    "conceptual_creativity": {
+      "description": "Creative conceptualization and framing",
+      "weight": 0.2
+    }
+  },
+  "metrics": {
+    "primary": "innovation_score",
+    "secondary": ["originality_rating", "creative_approach"]
+  }
+}
