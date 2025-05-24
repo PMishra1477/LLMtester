@@ -6,3 +6,6 @@
 /logs
 /__pycache__
 /.vscode
+/clients/__pycache__
+/evaluators/__pycache__
+/reporting/__pycache__
